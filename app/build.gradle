@@ -1,23 +1,15 @@
 apply plugin: 'com.android.application'
-
-apply plugin: 'kotlin-android'
-
-apply plugin: 'kotlin-android-extensions'
-
+apply plugin: 'org.jetbrains.kotlin.android'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 33
     buildToolsVersion "29.0.2"
-
-    dataBinding {
-        enabled = true
-    }
 
     defaultConfig {
         applicationId "com.makzimi.ramgallery"
         minSdkVersion 21
-        targetSdkVersion 29
+        targetSdkVersion 33
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -33,51 +25,58 @@ android {
         targetCompatibility = 1.8
         sourceCompatibility = 1.8
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-    def appCompatVersion = '1.1.0'
+    def appCompatVersion = '1.6.1'
     implementation "androidx.appcompat:appcompat:$appCompatVersion"
 
-    def ktxVersion = '1.1.0'
+    def ktxVersion = '1.10.1'
     implementation "androidx.core:core-ktx:$ktxVersion"
 
-    def constraintLayoutVersion = '1.1.3'
+    def constraintLayoutVersion = '2.1.4'
     implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
 
-    def lifecycleVersion = "2.1.0"
+    def lifecycleVersion = "2.2.0"
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycleVersion"
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.6.1"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1"
 
-    def gsonVersion = '2.8.6'
+    def gsonVersion = '2.10'
     implementation "com.google.code.gson:gson:$gsonVersion"
 
-    def okhttpVersion = '3.14.4'
+    def okhttpVersion = '4.10.0'
     implementation "com.squareup.okhttp3:okhttp:$okhttpVersion"
     implementation "com.squareup.okhttp3:logging-interceptor:$okhttpVersion"
 
-    def retrofitVersion = '2.6.2'
+    def retrofitVersion = '2.9.0'
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
 
-    def roomVersion = '2.2.2'
-    kapt "androidx.room:room-compiler:$roomVersion"
-    implementation "androidx.room:room-runtime:$roomVersion"
-    implementation "androidx.room:room-ktx:$roomVersion"
-    implementation "androidx.room:room-rxjava2:$roomVersion"
+    def room_version = "2.5.2"
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-rxjava2:$room_version"
+    implementation "androidx.room:room-paging:$room_version"
 
-    def pagingVersion = "2.1.0"
+    def pagingVersion = "3.1.1"
     implementation "androidx.paging:paging-runtime:$pagingVersion"
 
-    def glideVersion = "4.10.0"
+    def glideVersion = "4.13.2"
     kapt "com.github.bumptech.glide:compiler:$glideVersion"
     implementation "com.github.bumptech.glide:glide:$glideVersion"
 
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 }

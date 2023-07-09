@@ -2,7 +2,6 @@ package com.makzimi.ramgallery.gallery.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.Observer
@@ -10,27 +9,32 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.paging.PagedList
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.makzimi.ramgallery.R
+import com.makzimi.ramgallery.databinding.ActivityGalleryBinding
 import com.makzimi.ramgallery.di.Injector
 import com.makzimi.ramgallery.model.CharacterEntity
-import kotlinx.android.synthetic.main.activity_gallery.*
 
 class GalleryActivity : AppCompatActivity() {
+
+    private lateinit var _binding: ActivityGalleryBinding
 
     private lateinit var viewModel: GalleryViewModel
     private val adapter = GalleryAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_gallery)
+
+        _binding = ActivityGalleryBinding.inflate(layoutInflater)
+        val view = _binding.root
+        setContentView(view)
 
         viewModel = ViewModelProviders.of(this, Injector.provideViewModelFactory(this))
             .get(GalleryViewModel::class.java)
-        uiRecyclerView.adapter = adapter
-        uiRecyclerView.layoutManager = LinearLayoutManager(this)
+        _binding.uiRecyclerView.adapter = adapter
+        _binding.uiRecyclerView.layoutManager = LinearLayoutManager(this)
 
         subscribeUI()
 
-        uiSwipeRefreshLayout.setOnRefreshListener {
+        _binding.uiSwipeRefreshLayout.setOnRefreshListener {
             viewModel.refresh()
         }
     }
@@ -52,7 +56,7 @@ class GalleryActivity : AppCompatActivity() {
                 if(it) {
                     showUILoading()
                 } else {
-                    uiMessage.text = getString(R.string.message_empty_string)
+                    _binding.uiMessage.text = getString(R.string.message_empty_string)
                     showUIMessage()
                 }
             }
@@ -60,23 +64,23 @@ class GalleryActivity : AppCompatActivity() {
     }
 
     private fun showUILoading() {
-        uiRecyclerView.visibility = View.GONE
-        uiProgressBar.visibility = View.VISIBLE
-        uiMessage.visibility = View.GONE
-        uiSwipeRefreshLayout.isRefreshing = false
+        _binding.uiRecyclerView.visibility = View.GONE
+        _binding.uiProgressBar.visibility = View.VISIBLE
+        _binding.uiMessage.visibility = View.GONE
+        _binding.uiSwipeRefreshLayout.isRefreshing = false
     }
 
     private fun showUIContent() {
-        uiRecyclerView.visibility = View.VISIBLE
-        uiProgressBar.visibility = View.GONE
-        uiMessage.visibility = View.GONE
-        uiSwipeRefreshLayout.isRefreshing = false
+        _binding.uiRecyclerView.visibility = View.VISIBLE
+        _binding.uiProgressBar.visibility = View.GONE
+        _binding.uiMessage.visibility = View.GONE
+        _binding.uiSwipeRefreshLayout.isRefreshing = false
     }
 
     private fun showUIMessage() {
-        uiRecyclerView.visibility = View.GONE
-        uiProgressBar.visibility = View.GONE
-        uiMessage.visibility = View.VISIBLE
-        uiSwipeRefreshLayout.isRefreshing = false
+        _binding.uiRecyclerView.visibility = View.GONE
+        _binding.uiProgressBar.visibility = View.GONE
+        _binding.uiMessage.visibility = View.VISIBLE
+        _binding.uiSwipeRefreshLayout.isRefreshing = false
     }
 }
