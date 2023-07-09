@@ -7,8 +7,7 @@ import java.util.concurrent.Executor
 class GalleryLocalDataSource(
     private val dao: GalleryDao,
     private val executor: Executor
-)
-{
+) {
     fun getAllCharacters(): DataSource.Factory<Int, CharacterEntity> {
         return dao.queryAllCharacters()
     }

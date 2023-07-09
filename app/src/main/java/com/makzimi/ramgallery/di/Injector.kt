@@ -28,10 +28,10 @@ object Injector {
     private fun provideRAMService(context: Context): RAMService {
         val retrofit =
             Retrofit.Builder()
-            .client(provideOkHttpClient(context))
-            .baseUrl(RAMService.ENDPOINT)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
+                .client(provideOkHttpClient(context))
+                .baseUrl(RAMService.ENDPOINT)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
         return retrofit.create(RAMService::class.java)
     }
 
@@ -50,11 +50,15 @@ object Injector {
     private fun provideGalleryLocalDataSource(context: Context): GalleryLocalDataSource {
         return GalleryLocalDataSource(
             provideGalleryDao(context),
-            Executors.newSingleThreadExecutor())
+            Executors.newSingleThreadExecutor()
+        )
     }
 
     private fun provideGalleryRepository(context: Context): GalleryRepository {
-        return GalleryRepository(provideGalleryRemoteDataSource(context), provideGalleryLocalDataSource(context))
+        return GalleryRepository(
+            provideGalleryRemoteDataSource(context),
+            provideGalleryLocalDataSource(context)
+        )
     }
 
     fun provideViewModelFactory(context: Context): ViewModelProvider.Factory {

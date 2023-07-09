@@ -8,7 +8,7 @@ import com.makzimi.ramgallery.model.CharacterEntity
 interface GalleryDao {
 
     @Query("SELECT * FROM characters ORDER BY id")
-    fun queryAllCharacters() : DataSource.Factory<Int, CharacterEntity>
+    fun queryAllCharacters(): DataSource.Factory<Int, CharacterEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(characters: List<CharacterEntity>): List<Long>

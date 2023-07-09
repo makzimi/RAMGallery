@@ -11,6 +11,6 @@ interface RAMService {
     }
 
     @GET("character/")
-    fun getCharacters(@Query("page") page: Int) : Call<RAMServiceResponse>
+    fun getCharacters(@Query("page") page: Int): Call<RAMServiceResponse>
 
 }

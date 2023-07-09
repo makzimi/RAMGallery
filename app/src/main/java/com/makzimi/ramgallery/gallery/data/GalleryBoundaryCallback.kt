@@ -5,7 +5,7 @@ import com.makzimi.ramgallery.model.CharacterEntity
 
 class GalleryBoundaryCallback(
     private val fetchCall: () -> Unit
-): PagedList.BoundaryCallback<CharacterEntity>() {
+) : PagedList.BoundaryCallback<CharacterEntity>() {
 
     override fun onZeroItemsLoaded() {
         fetchCall()

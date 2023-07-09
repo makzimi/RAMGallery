@@ -6,11 +6,10 @@ import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
 import com.makzimi.ramgallery.model.CharacterEntity
 
-class GalleryRepository (
+class GalleryRepository(
     private val remoteDataSource: GalleryRemoteDataSource,
     private val localDataSource: GalleryLocalDataSource
-)
-{
+) {
     companion object {
         const val DATABASE_PAGE = 30
     }

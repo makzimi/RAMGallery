@@ -6,7 +6,7 @@ import androidx.paging.PagedList
 import com.makzimi.ramgallery.gallery.data.GalleryRepository
 import com.makzimi.ramgallery.model.CharacterEntity
 
-class GalleryViewModel (
+class GalleryViewModel(
     private val repository: GalleryRepository
 ) : ViewModel() {
 

@@ -2,7 +2,7 @@ package com.makzimi.ramgallery.network
 
 import com.google.gson.annotations.SerializedName
 
-data class ResponseInfo (
+data class ResponseInfo(
 
     @SerializedName("count")
     val count: Int = 0,

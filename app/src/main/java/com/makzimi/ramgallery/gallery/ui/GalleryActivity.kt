@@ -41,7 +41,7 @@ class GalleryActivity : AppCompatActivity() {
 
     private fun subscribeUI() {
         viewModel.characters.observe(this, Observer<PagedList<CharacterEntity>> {
-            if(it?.size != 0) {
+            if (it?.size != 0) {
                 showUIContent()
                 adapter.submitList(it)
             }
@@ -52,8 +52,8 @@ class GalleryActivity : AppCompatActivity() {
         })
 
         viewModel.isLoadingState.observe(this, Observer<Boolean> {
-            if(adapter.itemCount == 0) {
-                if(it) {
+            if (adapter.itemCount == 0) {
+                if (it) {
                     showUILoading()
                 } else {
                     _binding.uiMessage.text = getString(R.string.message_empty_string)

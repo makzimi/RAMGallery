@@ -7,9 +7,11 @@ import androidx.room.RoomDatabase
 import com.makzimi.ramgallery.gallery.data.GalleryDao
 import com.makzimi.ramgallery.model.CharacterEntity
 
-@Database(entities = [ CharacterEntity::class ],
-    version = 1, exportSchema = false)
-abstract class AppDatabase: RoomDatabase() {
+@Database(
+    entities = [CharacterEntity::class],
+    version = 1, exportSchema = false
+)
+abstract class AppDatabase : RoomDatabase() {
 
     abstract fun galleryDao(): GalleryDao
 
@@ -20,14 +22,16 @@ abstract class AppDatabase: RoomDatabase() {
         fun getInstance(context: Context): AppDatabase {
 
             var tempInstance = INSTANCE
-            if(tempInstance != null) {
+            if (tempInstance != null) {
                 return tempInstance
             }
 
             synchronized(this) {
-                val instance = Room.databaseBuilder(context.applicationContext,
+                val instance = Room.databaseBuilder(
+                    context.applicationContext,
                     AppDatabase::class.java,
-                    "app_database")
+                    "app_database"
+                )
                     .build()
                 INSTANCE = instance
                 return instance

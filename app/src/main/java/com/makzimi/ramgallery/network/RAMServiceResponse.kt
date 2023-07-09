@@ -3,7 +3,7 @@ package com.makzimi.ramgallery.network
 import com.google.gson.annotations.SerializedName
 import com.makzimi.ramgallery.model.CharacterEntity
 
-data class RAMServiceResponse (
+data class RAMServiceResponse(
 
     @SerializedName("info")
     val info: ResponseInfo = ResponseInfo(),
