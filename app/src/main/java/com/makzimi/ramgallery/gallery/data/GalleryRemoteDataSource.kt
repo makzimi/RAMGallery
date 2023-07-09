@@ -1,6 +1,5 @@
 package com.makzimi.ramgallery.gallery.data
 
-import com.makzimi.ramgallery.model.CharacterEntity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

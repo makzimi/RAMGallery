@@ -1,7 +1,6 @@
 package com.makzimi.ramgallery.gallery.data
 
 import androidx.paging.DataSource
-import com.makzimi.ramgallery.model.CharacterEntity
 import java.util.concurrent.Executor
 
 class GalleryLocalDataSource(

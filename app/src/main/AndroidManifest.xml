@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".gallery.ui.GalleryActivity"
+            android:name=".gallery.presentation.GalleryActivity"
             android:exported="true"
             >
             <intent-filter>

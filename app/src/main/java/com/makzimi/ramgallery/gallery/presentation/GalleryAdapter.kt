@@ -1,11 +1,11 @@
-package com.makzimi.ramgallery.gallery.ui
+package com.makzimi.ramgallery.gallery.presentation
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import com.makzimi.ramgallery.databinding.ItemGalleryBinding
-import com.makzimi.ramgallery.model.CharacterEntity
+import com.makzimi.ramgallery.gallery.data.CharacterEntity
 
 class GalleryAdapter : PagedListAdapter<CharacterEntity, GalleryViewHolder>(DiffCallback()) {
 

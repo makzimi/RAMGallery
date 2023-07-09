@@ -1,4 +1,4 @@
-package com.makzimi.ramgallery.gallery.ui
+package com.makzimi.ramgallery.gallery.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.makzimi.ramgallery.R
 import com.makzimi.ramgallery.databinding.ActivityGalleryBinding
 import com.makzimi.ramgallery.di.Injector
-import com.makzimi.ramgallery.model.CharacterEntity
+import com.makzimi.ramgallery.gallery.data.CharacterEntity
 
 class GalleryActivity : AppCompatActivity() {
 

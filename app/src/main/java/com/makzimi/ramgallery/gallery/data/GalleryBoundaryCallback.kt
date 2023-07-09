@@ -1,7 +1,6 @@
 package com.makzimi.ramgallery.gallery.data
 
 import androidx.paging.PagedList
-import com.makzimi.ramgallery.model.CharacterEntity
 
 class GalleryBoundaryCallback(
     private val fetchCall: () -> Unit

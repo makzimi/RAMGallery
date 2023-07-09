@@ -2,7 +2,6 @@ package com.makzimi.ramgallery.gallery.data
 
 import androidx.paging.DataSource
 import androidx.room.*
-import com.makzimi.ramgallery.model.CharacterEntity
 
 @Dao
 interface GalleryDao {

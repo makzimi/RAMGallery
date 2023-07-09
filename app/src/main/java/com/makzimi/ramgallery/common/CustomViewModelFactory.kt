@@ -3,7 +3,7 @@ package com.makzimi.ramgallery.common
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.makzimi.ramgallery.gallery.data.GalleryRepository
-import com.makzimi.ramgallery.gallery.ui.GalleryViewModel
+import com.makzimi.ramgallery.gallery.presentation.GalleryViewModel
 
 class CustomViewModelFactory(private val repository: GalleryRepository) :
     ViewModelProvider.Factory {

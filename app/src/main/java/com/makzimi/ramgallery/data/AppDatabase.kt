@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.makzimi.ramgallery.gallery.data.GalleryDao
-import com.makzimi.ramgallery.model.CharacterEntity
+import com.makzimi.ramgallery.gallery.data.CharacterEntity
 
 @Database(
     entities = [CharacterEntity::class],
