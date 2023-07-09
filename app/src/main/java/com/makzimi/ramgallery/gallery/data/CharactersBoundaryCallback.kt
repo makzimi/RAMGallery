@@ -2,7 +2,7 @@ package com.makzimi.ramgallery.gallery.data
 
 import androidx.paging.PagedList
 
-class GalleryBoundaryCallback(
+class CharactersBoundaryCallback(
     private val fetchCall: () -> Unit
 ) : PagedList.BoundaryCallback<CharacterEntity>() {
 

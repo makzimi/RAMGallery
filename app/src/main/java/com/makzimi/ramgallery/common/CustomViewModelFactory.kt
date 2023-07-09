@@ -2,16 +2,16 @@ package com.makzimi.ramgallery.common
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.makzimi.ramgallery.gallery.data.GalleryRepository
-import com.makzimi.ramgallery.gallery.presentation.GalleryViewModel
+import com.makzimi.ramgallery.gallery.data.CharactersRepository
+import com.makzimi.ramgallery.gallery.presentation.CharactersViewModel
 
-class CustomViewModelFactory(private val repository: GalleryRepository) :
+class CustomViewModelFactory(private val repository: CharactersRepository) :
     ViewModelProvider.Factory {
 
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(GalleryViewModel::class.java)) {
+        if (modelClass.isAssignableFrom(CharactersViewModel::class.java)) {
             @Suppress("UNCHECKED_CAST")
-            return GalleryViewModel(repository) as T
+            return CharactersViewModel(repository) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

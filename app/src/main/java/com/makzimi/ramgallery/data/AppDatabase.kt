@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.makzimi.ramgallery.gallery.data.GalleryDao
+import com.makzimi.ramgallery.gallery.data.CharactersDao
 import com.makzimi.ramgallery.gallery.data.CharacterEntity
 
 @Database(
@@ -13,7 +13,7 @@ import com.makzimi.ramgallery.gallery.data.CharacterEntity
 )
 abstract class AppDatabase : RoomDatabase() {
 
-    abstract fun galleryDao(): GalleryDao
+    abstract fun galleryDao(): CharactersDao
 
     companion object {
         @Volatile

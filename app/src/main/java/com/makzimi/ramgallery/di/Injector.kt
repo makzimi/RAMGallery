@@ -4,10 +4,10 @@ import android.content.Context
 import androidx.lifecycle.ViewModelProvider
 import com.makzimi.ramgallery.common.CustomViewModelFactory
 import com.makzimi.ramgallery.data.AppDatabase
-import com.makzimi.ramgallery.gallery.data.GalleryDao
-import com.makzimi.ramgallery.gallery.data.GalleryLocalDataSource
-import com.makzimi.ramgallery.gallery.data.GalleryRemoteDataSource
-import com.makzimi.ramgallery.gallery.data.GalleryRepository
+import com.makzimi.ramgallery.gallery.data.CharactersDao
+import com.makzimi.ramgallery.gallery.data.CharactersLocalDataSource
+import com.makzimi.ramgallery.gallery.data.CharactersRemoteDataSource
+import com.makzimi.ramgallery.gallery.data.CharactersRepository
 import com.makzimi.ramgallery.gallery.data.RAMService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -35,27 +35,27 @@ object Injector {
         return retrofit.create(RAMService::class.java)
     }
 
-    private fun provideGalleryRemoteDataSource(context: Context): GalleryRemoteDataSource {
-        return GalleryRemoteDataSource(provideRAMService(context))
+    private fun provideGalleryRemoteDataSource(context: Context): CharactersRemoteDataSource {
+        return CharactersRemoteDataSource(provideRAMService(context))
     }
 
     private fun provideAppDatabase(context: Context): AppDatabase {
         return AppDatabase.getInstance(context)
     }
 
-    private fun provideGalleryDao(context: Context): GalleryDao {
+    private fun provideGalleryDao(context: Context): CharactersDao {
         return provideAppDatabase(context).galleryDao()
     }
 
-    private fun provideGalleryLocalDataSource(context: Context): GalleryLocalDataSource {
-        return GalleryLocalDataSource(
+    private fun provideGalleryLocalDataSource(context: Context): CharactersLocalDataSource {
+        return CharactersLocalDataSource(
             provideGalleryDao(context),
             Executors.newSingleThreadExecutor()
         )
     }
 
-    private fun provideGalleryRepository(context: Context): GalleryRepository {
-        return GalleryRepository(
+    private fun provideGalleryRepository(context: Context): CharactersRepository {
+        return CharactersRepository(
             provideGalleryRemoteDataSource(context),
             provideGalleryLocalDataSource(context)
         )

@@ -3,8 +3,8 @@ package com.makzimi.ramgallery.gallery.data
 import androidx.paging.DataSource
 import java.util.concurrent.Executor
 
-class GalleryLocalDataSource(
-    private val dao: GalleryDao,
+class CharactersLocalDataSource(
+    private val dao: CharactersDao,
     private val executor: Executor
 ) {
     fun getAllCharacters(): DataSource.Factory<Int, CharacterEntity> {

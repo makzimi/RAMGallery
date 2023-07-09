@@ -5,7 +5,7 @@ import com.bumptech.glide.Glide
 import com.makzimi.ramgallery.databinding.ItemGalleryBinding
 import com.makzimi.ramgallery.gallery.data.CharacterEntity
 
-class GalleryViewHolder(private val binding: ItemGalleryBinding) :
+class CharactersViewHolder(private val binding: ItemGalleryBinding) :
     RecyclerView.ViewHolder(binding.root) {
 
     fun bind(characterEntity: CharacterEntity) {

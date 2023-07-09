@@ -5,9 +5,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
 
-class GalleryRepository(
-    private val remoteDataSource: GalleryRemoteDataSource,
-    private val localDataSource: GalleryLocalDataSource
+class CharactersRepository(
+    private val remoteDataSource: CharactersRemoteDataSource,
+    private val localDataSource: CharactersLocalDataSource
 ) {
     companion object {
         const val DATABASE_PAGE = 30
@@ -22,11 +22,11 @@ class GalleryRepository(
     private var isInProgress = false
     private var nextPage = 1
 
-    fun getAllGalleryCharacters(): LiveData<PagedList<CharacterEntity>> {
+    fun getAllCharacters(): LiveData<PagedList<CharacterEntity>> {
 
         val dataSourceFactory = localDataSource.getAllCharacters()
 
-        val boundaryCallback = GalleryBoundaryCallback(::fetchNextPage)
+        val boundaryCallback = CharactersBoundaryCallback(::fetchNextPage)
 
         val config = PagedList.Config.Builder()
             .setPageSize(DATABASE_PAGE)

@@ -7,17 +7,17 @@ import androidx.recyclerview.widget.DiffUtil
 import com.makzimi.ramgallery.databinding.ItemGalleryBinding
 import com.makzimi.ramgallery.gallery.data.CharacterEntity
 
-class GalleryAdapter : PagedListAdapter<CharacterEntity, GalleryViewHolder>(DiffCallback()) {
+class CharactersAdapter : PagedListAdapter<CharacterEntity, CharactersViewHolder>(DiffCallback()) {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GalleryViewHolder {
-        return GalleryViewHolder(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharactersViewHolder {
+        return CharactersViewHolder(
             ItemGalleryBinding.inflate(
                 LayoutInflater.from(parent.context), parent, false
             )
         )
     }
 
-    override fun onBindViewHolder(holder: GalleryViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: CharactersViewHolder, position: Int) {
         val entity = getItem(position)
         entity?.let {
             holder.bind(entity)

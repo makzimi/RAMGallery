@@ -4,7 +4,7 @@ import androidx.paging.DataSource
 import androidx.room.*
 
 @Dao
-interface GalleryDao {
+interface CharactersDao {
 
     @Query("SELECT * FROM characters ORDER BY id")
     fun queryAllCharacters(): DataSource.Factory<Int, CharacterEntity>
