@@ -1,4 +1,4 @@
-package com.makzimi.ramgallery.network
+package com.makzimi.ramgallery.gallery.data
 
 import com.google.gson.annotations.SerializedName
 import com.makzimi.ramgallery.model.CharacterEntity

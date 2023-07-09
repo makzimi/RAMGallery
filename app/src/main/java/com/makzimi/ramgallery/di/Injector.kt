@@ -8,7 +8,7 @@ import com.makzimi.ramgallery.gallery.data.GalleryDao
 import com.makzimi.ramgallery.gallery.data.GalleryLocalDataSource
 import com.makzimi.ramgallery.gallery.data.GalleryRemoteDataSource
 import com.makzimi.ramgallery.gallery.data.GalleryRepository
-import com.makzimi.ramgallery.network.RAMService
+import com.makzimi.ramgallery.gallery.data.RAMService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
